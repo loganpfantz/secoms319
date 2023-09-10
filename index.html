@@ -1,14 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+    </style>
+
+    <title>Logan Pfantz - Portfolio</title>
 </head>
+
 <body>
-    <h1>Hi from GitHub... 8</h1>
-    <p>This is a paragraph</p>
-    <p>Testing changes</p>
-    
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <img src="profile.jpg" alt="Profile Photo">
+            <h1>Logan W Pfantz</h1>
+            <p style="font-family: 'Courier New', Courier, monospace; color: brown">Software Engineer</p>
+            <p>
+                I am a student at Iowa State University enrolled in the Software Engineering program.
+                I have taken COM S 227, 228 and SE 166. I am currently taking COM S 252, 309, 319, and 327. 
+                My expected graduation date is Spring 2023.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>
+                    The first project is to develop a single web page using two technologies:
+                    HTML and CSS. The project consists of creating a single web page with a menu
+                    at the top, known as a navigation bar. We have to include text describing ourself
+                    and text describing the project. Additionally, we need to include two images:
+                    one image is of ourself and the second image is anything related to the project.
+                    In this case, the second image is the HTML and CSS logo below.
+                </p>
+            </div>
+            Add more project divs here
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>
+                Send an email to lwpfantz@iastate.edu</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Logan Pfantz</p>
+    </footer>
 </body>
+
 </html>
