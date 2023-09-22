@@ -52,3 +52,7 @@ body {
 .footer-text{
   color: white;
 }
+
+.px-3{
+  padding-top: 5%;
+}
