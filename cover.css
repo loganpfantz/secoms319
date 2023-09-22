@@ -49,9 +49,6 @@ body {
   border-bottom-color: #fff;
 }
 
-/*
-*  Footer
-*/
-footer{
-  background-color: #fff;
+.footer-text{
+  color: white;
 }
