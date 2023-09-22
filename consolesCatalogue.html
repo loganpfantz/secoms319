@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Video Game Console Catalogue</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<header data-bs-theme="dark">
+  <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4>About</h4>
+          <p class="text-body-secondary">Video games have been around almost as long as computers themselves. Since their inception, a plethora of innovations and new technologies have advanced the complexity and interactivity of video games to the point they are becoming indistinguishable from reality. Below is a catalogue of the latest consoles available today to get started playing and enjoying video games now.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+            <li><a href="#" class="text-white">Like on Facebook</a></li>
+            <li><a href="#" class="text-white">Email me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Album</strong>
+      </a>
+      <button class="navbar-toggler" src="./images/PS4.jpg" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Video Game Consoles</h1>
+        <p class="lead text-body-secondary">Video games have been around almost as long as computers themselves. Since their inception, a plethora of innovations and new technologies have advanced the complexity and interactivity of video games to the point they are becoming indistinguishable from reality. Below is a catalogue of the latest consoles available today to get started playing and enjoying video games now.</p>
+        <p>
+          <!--<a href="#" class="btn btn-primary my-2">Main call to action</a>
+          <a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            -->
+            <img src="./images/PS5.jpeg" alt="Playstation 5 Console">
+              <div class="card-body">
+              <p class="card-text">
+                The <strong>Playstation 5</strong> is the latest console released by Sony on November 12, 2020.
+                <br>
+                Playstation 5 Features:
+                <ul>
+                  <li>A <em>super-fast</em> SSD for immediate game loading</li>
+                  <li>Hardware accelerated ray-tracing</li>
+                  <li>Backwards compatibility with most Playstation 4 titles</li>
+                </ul>
+                There are 2 varients of the Playstation 5:
+                <ul>
+                  <li>Playstation 5 base model</li>
+                  <li>Playstation 5 Digital Edition</li>
+                </ul>
+                The Playstation 5 has enjoyed immense success since launching a few years ago. Major titles showing the full power and capabilities
+                of the hardware have since been released.<br>
+                Major Playstation 5 Games:
+                <ul>
+                  <li>Ratchet and Clank: Rift Apart</li>
+                  <li>Returnal</li>
+                  <li>God of War: Ragnarok</li>
+                  <li>Demon's Souls (2020)</li>
+                </ul>
+                The Playstation 5 is a feature rich console with a wide variety of game genres for gamers of all types to chose from. The power
+                of the custom processors inside the Playstation 5 provides awe inspiring visuals and gameplay features never before possible.
+
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://www.playstation.com/en-us/ps5/?smcid=pdc%3Aen-us%3Aprimary%20nav%3Amsg-hardware%3Aps5"><button type="button" class="btn btn-sm btn-outline-secondary">Buy Now</button></a>
+                  <a href="https://en.wikipedia.org/wiki/PlayStation_5"><button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button></a>
+                </div>
+                <!--<small class="text-body-secondary">9 mins</small>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img src="./images/XboxSeriesXS.jpg" alt="Xbox Series Consoles">
+            <div class="card-body">
+              <p class="card-text">
+                The <strong>Xbox Series X|S</strong> are the latest consoles released by Microsoft on November 10, 2020. There are two
+                distinct Xbox consoles to chose from this generation.
+                The flagship product is the Xbox Series X.
+                <br>Xbox Series X features:
+                <ul>
+                  <li>A powerful processor for playing games at high resolutions and framerates</li>
+                  <li>A blue-ray disk drive</li>
+                  <li>An internal SSD with 1TB capacity</li>
+                </ul>
+                The Xbox Series S is a budget oriented option to get gamers into the current generation at a competative price. 
+                
+                <br>The Xbox Series S features:
+                <ul>
+                  <li>A cut down version of the same processor in the Xbox Series X</li>
+                  <li>No disk-drive</li>
+                  <li>An internal SSD with 500GB capacity</li>
+                </ul>
+                Both Xbox Series consoles play all the same games and run the same software.
+                <br>
+                Major Xbox Series Games:
+                <ul>
+                  <li>Starfield</li>
+                  <li>Goldeneye 007</li>
+                  <li>Halo: Infinite</li>
+                </ul>
+                Microsoft has spent the last few years aquiring prolific game development studios.
+                With a loaded portfolio of talented studios behind Xbox Game Studios, the Xbox Series consoles are sure to get a wealth
+                of high quality first party titles in the near future. Many exciting titles have already been announced to be in development including:
+                <ul>
+                  <li>Avowed</li>
+                  <li>Fable 4</li>
+                  <li>Clockwork Revolution</li>
+                  <li>Gears 6</li>
+                </ul>
+                The Xbox Series consoles are struggling behind the bohemoth of Sony's Playstation 5, but are still a good option for gamers.
+                Xbox's strategy recently has been to provide a great value to gamers and many options for how to play games.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://www.xbox.com/en-US/consoles/xbox-series-x?xr=shellnav"><button type="button" class="btn btn-sm btn-outline-secondary">Buy Now</button></a>
+                  <a href="https://en.wikipedia.org/wiki/Xbox_Series_X_and_Series_S"><button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button></a>
+                </div>
+                <!--<small class="text-body-secondary">9 mins</small>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img src="./images/NintedoSwitch.jpg" alt="Nintendo Switch Console">
+            <div class="card-body">
+              <p class="card-text">
+                The <strong>Nintendo Switch</strong> is the latest console released by Nintendo on March 3, 2017.
+                Unlike Sony and Microsoft, Nintedo focused on making thier console's gaming experience unique by designing a 
+                "hybrid-console."
+                <br>Nintendo Switch Features:
+                <ul>
+                  <li>Play on the TV while plugged into the dock</li>
+                  <li>Take the Switch out of the dock and play anywhere</li>
+                  <li>Nintedo Switch Online Virtual Console</li>
+                </ul>
+                Nintendo has built a reputation for taking their time and releasing high quality, family-friendly video games that everyone
+                can enjoy.
+                <br>Major Switch Games:
+                <ul>
+                  <li>The Legend of Zelda: Breath of the Wild</li>
+                  <li>Mario-Kart 8 Deluxe</li>
+                  <li>Animal Crossing: New Horizons</li>
+                </ul>
+                Nintendo has dominated sales charts since the release of the Switch console. The Nintendo Switch offers a variety
+                of experiences not available anywhere else, giving it a competative edge over the competition. By continuing to 
+                release polished, content rich titles, Nintendo has garnered a positive reputation in the games industry.
+                
+                
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://www.nintendo.com/switch/"><button type="button" class="btn btn-sm btn-outline-secondary">Buy Now</button></a>
+                  <a href="https://en.wikipedia.org/wiki/Nintendo_Switch"><button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button></a>
+                </div>
+                <!-- <small class="text-body-secondary">9 mins</small> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img src="./images/SteamDeck.jpg" alt="Steam Deck">
+            <div class="card-body">
+              <p class="card-text">
+                The <strong>Steam Deck</strong> was released by Valve on February 25, 2022.
+                <br>Steam Deck Features:
+                <ul>
+                  <li>800p screen resolution with 16:10 aspect ratio</li>
+                  <li>Access to a large library of PC games on Steam</li>
+                  <li>Streamlined experience for players new to PC gaming</li>
+                  <li>User repairability with parts available on iFixit</li>
+                  <li>Ability to install and run custom software and operating systems made by third-parties</li>
+                  <li>Customizability to allow for myriad user experiences</li>
+                  <li>Multiple control options</li>
+                </ul>
+                Inspired by the success of the Nintedo Switch and other similar handhelds, Valve released the Steam Deck to a massive positive
+                reception. The Steam Deck is a mobile gaming PC in the formfactor of a handheld console. Running SteamOS, Valve's custom version
+                of the Linux operating system, allows the Steam Deck to achieve a "console-like" experience to the PC platform. This ease of use
+                is opening the PC market to a new audience who were unwilling or unable to learn the complexities of running games on PC. The Steam
+                Deck also provides several control options to allow users to play PC games that aren't compatible with controllers.
+                <br>Control Features:
+                <ul>
+                  <li>Gyroscope</li>
+                  <li>4 Programmable Rear buttons on the back of the device</li>
+                  <li>2 Trackpads on the front of the device</li>
+                </ul>
+                The Steam Deck has access to the whole Steam library of PC games. Unfortuntely, not every game runs on the Steam Deck for a variety
+                of reasons. Fortunately, Valve has made determining if a game will work easy with Steam Deck Verification. Every game is assigned a
+                rating on Steam to show the level of playability. Also, Valve's generous 2 hour return window ensures no one buys a game they can't play.
+                <br>Top Steam Deck Titles:
+                <ul>
+                  <li>Elden Ring</li>
+                  <li>The Witcher 3: Wild Hunt</li>
+                  <li>Hogwarts Legacy</li>
+                  <li>Vampire Survivors</li>
+                  <li>Red Dead Redemption 2</li>
+                </ul>
+                The Steam Deck is the most exciting new console on the market today.
+
+                
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://store.steampowered.com/steamdeck"><button type="button" class="btn btn-sm btn-outline-secondary">Buy Now</button></a>
+                  <a href="https://en.wikipedia.org/wiki/Steam_Deck"><button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button></a>
+                </div>
+                <!-- <small class="text-body-secondary">9 mins</small> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img src="./images/PS4.jpg" alt="Playstation 4 Console">
+            <div class="card-body">
+              <p class="card-text">
+                The <strong>Playstation 4</strong> was released by Sony on November 15, 2013. The Playstation 4 started with a strong impression on gamers by focusing on a 
+                "gamers first" marketing approach. This initial lead allowed the Playstation 4 to dominate sales charts for several years, until the Nintendo
+                Switch was released in 2017. Racking up impressive console sales, the success of the Playstation 4 continued into its software lineup.
+                <br>Best selling games include:
+                <ul>
+                  <li>Marvel's Spider-Man</li>
+                  <li>God of War (2018)</li>
+                  <li>Uncharted 4: A Thief's End</li>
+                </ul> 
+                While considered "old" by today's standards, Sony and many third-party game publishers still support the aging console today. 
+                Although major titles such as Spider-Man 2 will be exclusive to the newer Playstation 5, the Playstation 4 still has
+                a little bit of life left in it.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://en.wikipedia.org/wiki/PlayStation_4"><button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button></a>
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                </div>
+                <!-- <small class="text-body-secondary">9 mins</small> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img src="./images/XboxOne.jpg">
+            <div class="card-body">
+              <p class="card-text">
+                The <strong>Xbox One</strong> was released by Microsoft on November 22, 2013. Following a controversial unveiling earlier in the year, the Xbox
+                One stuggled to attract as wide of an audience as its direct competition, the Playstation 4. The controversy was about percieved anti-consumer practices
+                commited by Microsoft in designing the Xbox One.<br>
+                These practices included: 
+                <ul>
+                  <li>Requiring an online connection to play your games</li>
+                  <li>Bundling the console with an expensive proprietary technology called the "kinect"
+                  <li>Blocking the selling of used physical game disks</li>
+                </ul>
+                After the dissapointing lauch, Microsoft appointed Phil Spencer as Head of Xbox in 2014 to "turn the ship around" so to speak. Under his leadership, many positive pro-consumer decisions
+                have come from Microsoft.<br>
+                Popular decisions include: 
+                <ul>
+                  <li>Backwards compatibility on Xbox One</li>
+                  <li>Xbox Game Pass</li>
+                </ul>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Buy Now</button> -->
+                  <a href="https://en.wikipedia.org/wiki/Xbox_One"><button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button></a>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+</main>
+
+<footer class="text-body-secondary py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    <p class="mb-1">This website was designed by Logan Pfantz and Jesus Soto</p>
+    <p class="mb-0">About us: We are current students of Iowa State University enrolled in the Software Engineering major. <a href="https://www.engineering.iastate.edu/undergraduate-majors-and-minors/software/?utm_medium=ppc&utm_source=google&utm_campaign=FY24%20Recruitment%20-%20Engineering&utm_content=Software%20Engineering&gclid=Cj0KCQjw9rSoBhCiARIsAFOipll2bDiP-kEB61yO7ZQLNaxUyH2mzYo5DscEHKU5Z_-J4zvMJIKZRJkaAsXGEALw_wcB">Join us at Iowa State!</a>.</p>
+  </div>
+</footer>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>
