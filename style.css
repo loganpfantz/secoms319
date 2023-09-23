@@ -1,8 +1,12 @@
-.card-body{
-    background-color: white;
-}
+/*Header*/
 
 .header-style {
     text-indent: 10%;   /*Separates text from image*/
 }
 
+/*Welcome banner*/
+
+.secondary-text{
+    font-size: x-large;
+    text-decoration-color: dimgray;
+}
