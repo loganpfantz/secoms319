@@ -88,8 +88,10 @@
         z-index: 1500;
       }
     </style>
+    <link rel="stylesheet" href="./gameCatalog.css">
   </head>
   <body>
+    <script src="./gameCatalog.js"></script>
     <header data-bs-theme="dark">
       <div class="collapse text-bg-dark" id="navbarHeader">
         <div class="container">
@@ -117,10 +119,11 @@
               width="40px"
             />
             <div class="header-style">
-              <strong>My Gaming Library</strong>
+              <strong>GameSpace</strong>
             </div>
           </a>
 
+          <a href="./gameCatalog.html"><button type="button" class="btn btn-lg btn-close-white">Gaming Library</button></a>
           <a href="./consolesCatalogue.html"><button type="button" class="btn btn-lg btn-close-white">Consoles Catalogue</button></a>
           <a href="./index.html"><button type="button" class="btn btn-lg btn-close-white">About Us</button></a>
 
@@ -144,7 +147,7 @@
         <div class="welcome-banner">
           <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-              <h1 class=>Video Game Library</h1>
+              <h1>Video Game Library</h1>
               <p class="secondary-text">Most popular videogames realeses of the month.</p>
               <p class="secondary-text"><strong>September 2023</strong></p>
               <p>
@@ -161,245 +164,146 @@
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <!--------------------------------------------------------------------------->
             <div class="col">
-              <div class="card shadow-sm">
-                <img
-                  src="./images/Starfield-Header.jpg"
-                  alt="Starfield Header"
-                />
+              <div id = "card1" class="card shadow-sm custom-card">
+                <div id = "imgGame1"></div>
                 <div class="card-body">
-                  <p class="card-text">
-                    <strong>Starfield </strong> is an action role-playing game
-                    developed by Bethesda Game Studios and published by Bethesda
-                    Softworks. It was announced during Bethesda's E3
-                    presentation in 2018. The game takes place in a space-themed
-                    setting, and is the first new intellectual property
-                    developed by Bethesda in 25 years.
-                  </p>
+                  <button onclick=" location.href='starfield-details.html' " type="button" class="btn btn-primary mb-2">Go to game page</button>
+                  <p id="txtGame1" class="card-text"></p>
                   <div
                     class="d-flex justify-content-between align-items-center"
                   >
-                    <div>
-                      <h6>Bethesda Game Studios</h6>
-                    </div>
-                    <small class="text-body-secondary"
-                      ><strong>Rating: 7/10</strong>
-                    </small>
+                    <div id = "gameDev1"></div>
+                    <div id = "rating1"></div>
                   </div>
                 </div>
               </div>
             </div>
             <!--------------------------------------------------------------------------->
             <div class="col">
-              <div class="card shadow-sm">
-                <img
-                  src="./images/badlur'sGate3.jpg"
-                  alt="Baldur's Gate 3 Header"
-                />
-
+              <div id = "card2" class="card shadow-sm custom-card">
+                <div id = "imgGame2"></div>
                 <div class="card-body">
-                  <p class="card-text">
-                    <strong>Baldur's Gate 3 </strong> is a role-playing video
-                    game developed and published by Larian Studios. It is the
-                    third main game in the Baldur's Gate series, which is based
-                    on the Dungeons & Dragons tabletop role-playing system.
-                  </p>
+                  <button onclick=" location.href='baldurs-gate-3-details.html' " type="button" class="btn btn-primary mb-2">Go to game page</button>
+                  <p id="txtGame2" class="card-text"></p>
                   <div
                     class="d-flex justify-content-between align-items-center"
                   >
-                    <div>
-                      <h6>Larian Studios</h6>
-                    </div>
-                    <small class="text-body-secondary"
-                      ><strong>Rating: 10/10</strong></small
-                    >
+                  <div id = "gameDev2"></div>
+                  <div id = "rating2"></div>
                   </div>
                 </div>
               </div>
             </div>
             <!--------------------------------------------------------------------------->
             <div class="col">
-              <div class="card shadow-sm">
-                <img
-                  src="./images/MortalKombat1.jpeg"
-                  alt="Mortal Kombat 1 Header"
-                />
-
+              <div id = "card3" class="card shadow-sm">
+                <div id = "imgGame3"></div>
                 <div class="card-body">
-                  <p class="card-text">
-                    <strong> Mortal Kombat 1 </strong> is a fighting game
-                    developed by NetherRealm Studios and published by Warner
-                    Bros. Games. It is the twelfth main installment in the
-                    Mortal Kombat series, serving as both a sequel to Mortal
-                    Kombat 11 and the series' second reboot, following Mortal
-                    Kombat.
-                  </p>
+                  <button id="detailsBtn3" type="button" class="btn btn-primary mb-2">Go to game page</button>
+                  <p id="txtGame3" class="card-text"></p>
                   <div
                     class="d-flex justify-content-between align-items-center"
                   >
-                    <div>
-                      <h6>NetherRealm Studios</h6>
-                    </div>
-                    <small class="text-body-secondary"
-                      ><strong>Rating: 7/10</strong></small
-                    >
+                  <div id = "gameDev3"></div>
+                  <div id = "rating3"></div>
                   </div>
                 </div>
               </div>
             </div>
             <!--------------------------------------------------------------------------->
             <div class="col">
-              <div class="card shadow-sm">
-                <img src="./images/FFEC.jpeg" alt="Final Fantasy VII Header" />
+              <div id = "card4" class="card shadow-sm">
+                <div id = "imgGame4"></div>
                 <div class="card-body">
-                  <p class="card-text">
-                    <strong>Final Fantasy VII: Ever Crisis </strong> is a
-                    role-playing video game developed by Applibot and Square
-                    Enix, who also publishes it for Android and iOS. It forms
-                    part of the Compilation of Final Fantasy VII, a series of
-                    media spin-offs from the 1997 video game Final Fantasy VII.
-                  </p>
+                  <button id="detailsBtn4" type="button" class="btn btn-primary mb-2">Go to game page</button>
+                  <p id="txtGame4" class="card-text"></p>
                   <div
                     class="d-flex justify-content-between align-items-center"
                   >
-                    <div>
-                      <h6>Square Enix</h6>
-                    </div>
-                    <small class="text-body-secondary"
-                      ><strong>Rating: 4.4/5</strong></small
-                    >
+                  <div id = "gameDev4"></div>
+                  <div id = "rating4"></div>
                   </div>
                 </div>
               </div>
             </div>
             <!--------------------------------------------------------------------------->
             <div class="col">
-              <div class="card shadow-sm">
-                <img src="./images/liesofP.jpg" alt="Lies of P Header" />
-
+              <div id = "card5" class="card shadow-sm">
+                <div id = "imgGame5"></div>
                 <div class="card-body">
-                  <p class="card-text">
-                    <strong>Lies of P</strong> is a thrilling soulslike that
-                    takes the story of Pinocchio, turns it on its head, and sets
-                    it against the darkly elegant backdrop of the Belle Epoque
-                    era. It is developed by Neowiz Games and Round8 Studio, and
-                    published by Neowiz Games.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div>
-                      <h6>Neowiz Games</h6>
-                    </div>
-                    <small class="text-body-secondary"
-                      ><strong>Rating: 9/10</strong></small
-                    >
+                  <button id="detailsBtn5" type="button" class="btn btn-primary mb-2">Go to game page</button>
+                  <p id="txtGame5" class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                  <div id = "gameDev5"></div>
+                  <div id = "rating5"></div>
                   </div>
                 </div>
               </div>
             </div>
             <!--------------------------------------------------------------------------->
             <div class="col">
-              <div class="card shadow-sm">
-                <img src="./images/payday3.jpeg" alt="Payday 3 Header" />
+              <div id = "card6" class="card shadow-sm">
+                <div id = "imgGame6"></div>
                 <div class="card-body">
-                  <p class="card-text">
-                    <strong>Payday 3</strong> is a first-person shooter game
-                    developed by Starbreeze Studios and published by Deep
-                    Silver. It is a sequel to Payday 2, and is also the third
-                    installment in the Payday series of video games. The game
-                    was released on September 21, 2023 for Playstation 5, Xbox
-                    Series X/S, and Microsoft Windows.
-                  </p>
+                  <button id="detailsBtn6" type="button" class="btn btn-primary mb-2">Go to game page</button>
+                  <p id="txtGame6" class="card-text"></p>
                   <div
                     class="d-flex justify-content-between align-items-center"
                   >
-                    <div>
-                      <h6>Starbreeze Studios</h6>
-                    </div>
-                    <small class="text-body-secondary"
-                      ><strong>Rating: 6/10</strong></small
-                    >
+                  <div id = "gameDev6"></div>
+                  <div id = "rating6"></div>
                   </div>
                 </div>
               </div>
             </div>
             <!--------------------------------------------------------------------------->
             <div class="col">
-              <div class="card shadow-sm">
-                <img src="./images/FC24.jpeg" alt="FC24 Header" />
+              <div id = "card7" class="card shadow-sm">
+                <div id = "imgGame7"></div>
                 <div class="card-body">
-                  <p class="card-text">
-                    <strong>EA Sports FC 24 </strong> is an upcoming football
-                    video game, developed by EA Vancouver and EA Romania and
-                    published by EA Sports serving as the inaugural installment
-                    in the EA Sports FC series following the conclusion of EA's
-                    partnership with FIFA, and the 31st overall installment, it
-                    is set to launch worldwide on 29 September 2023.
-                  </p>
+                  <button id="detailsBtn7" type="button" class="btn btn-primary mb-2">Go to game page</button>
+                  <p id="txtGame7" class="card-text"></p>
                   <div
                     class="d-flex justify-content-between align-items-center"
                   >
-                    <div>
-                      <h6>EA Sports</h6>
-                    </div>
-                    <small class="text-body-secondary"
-                      ><strong>Release date: September 29th 2023</strong></small
-                    >
+                  <div id = "gameDev7"></div>
+                  <div id = "rating7"></div>
                   </div>
                 </div>
               </div>
             </div>
             <!--------------------------------------------------------------------------->
             <div class="col">
-              <div class="card shadow-sm">
-                <img src="./images/TCMF.jpeg" alt="The Crew MotorFest Header" />
+              <div id = "card8" class="card shadow-sm">
+                <div id = "imgGame8"></div>
                 <div class="card-body">
-                  <p class="card-text">
-                    <strong>The Crew Motorfest</strong> is a 2023 racing video
-                    game developed by Ubisoft Ivory Tower and published by
-                    Ubisoft for PlayStation 4, PlayStation 5, Windows, Xbox One,
-                    and Xbox Series X/S. It is the sequel to 2018's The Crew 2
-                    and the third game in The Crew series, and was released on
-                    September 14, 2023.
-                  </p>
+                  <button id="detailsBtn8" type="button" class="btn btn-primary mb-2">Go to game page</button>
+                  <p id="txtGame8" class="card-text"></p>
                   <div
                     class="d-flex justify-content-between align-items-center"
                   >
-                    <div>
-                      <h6>Ubisoft</h6>
-                    </div>
-                    <small class="text-body-secondary"
-                      ><strong>Rating: 7.8/10</strong></small
-                    >
-                  </div>
+                  <div id = "gameDev8"></div>
+                  <div id = "rating8"></div>
                 </div>
               </div>
+            </div>
             </div>
             <!--------------------------------------------------------------------------->
             <div class="col">
-              <div class="card shadow-sm">
-                <img src="./images/NBA24.jpg" alt="NBA24 Header" />
+              <div id = "card9" class="card shadow-sm">
+                <div id = "imgGame9"></div>
                 <div class="card-body">
-                  <p class="card-text">
-                    <strong>NBA 2K24</strong> is a 2023 basketball video game
-                    developed by Visual Concepts and published by 2K, based on
-                    the National Basketball Association (NBA). It is the 25th
-                    installment in the NBA 2K franchise and is the successor to
-                    NBA 2K23.
-                  </p>
+                  <button id="detailsBtn9" type="button" class="btn btn-primary mb-2">Go to game page</button>
+                  <p id="txtGame9" class="card-text"></p>
                   <div
                     class="d-flex justify-content-between align-items-center"
                   >
-                    <div>
-                      <h6>2K</h6>
-                    </div>
-                    <small class="text-body-secondary"
-                      ><strong>Rating: 2/10</strong></small
-                    >
-                  </div>
+                  <div id = "gameDev9"></div>
+                  <div id = "rating9"></div>
                 </div>
               </div>
             </div>
+            <!----------------------------------------------------------------------------->
           </div>
         </div>
       </div>
@@ -419,7 +323,7 @@
           <a
             href="https://www.engineering.iastate.edu/undergraduate-majors-and-minors/software/?utm_medium=ppc&utm_source=google&utm_campaign=FY24%20Recruitment%20-%20Engineering&utm_content=Software%20Engineering&gclid=Cj0KCQjw9rSoBhCiARIsAFOipll2bDiP-kEB61yO7ZQLNaxUyH2mzYo5DscEHKU5Z_-J4zvMJIKZRJkaAsXGEALw_wcB"
             >Join us at Iowa State!</a
-          >.
+          >
         </p>
       </div>
     </footer>

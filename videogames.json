@@ -1,0 +1,68 @@
+{
+    "games": [
+      {
+        "title": "Starfield",
+        "description": " is an action role-playing game developed by Bethesda Game Studios and published by Bethesda Softworks. It was announced during Bethesda's E3 presentation in 2018. The game takes place in a space-themed setting, and is the first new intellectual property developed by Bethesda in 25 years.",
+        "developer": "Bethesda Game Studios",
+        "rating": "7/10",
+        "image": "images/Starfield-Header.jpg"
+      },
+      {
+        "title": "Baldur's Gate 3",
+        "description": " is a role-playing video game developed and published by Larian Studios. It is the third main game in the Baldur's Gate series, which is based on the Dungeons & Dragons tabletop role-playing system.",
+        "developer": "Larian Studios",
+        "rating": "10/10",
+        "image": "images/badlur'sGate3.jpg"
+      },
+      {
+        "title": "Mortal Kombat 1",
+        "description": " is a fighting game developed by NetherRealm Studios and published by Warner Bros. Games. It is the twelfth main installment in the Mortal Kombat series, serving as both a sequel to Mortal Kombat 11 and the series' second reboot, following Mortal Kombat.",
+        "developer": "NetherRealm Studios",
+        "rating": "7/10",
+        "image": "images/MortalKombat1.jpeg"
+      },
+      {
+        "title": "Final Fantasy VII: Ever Crisis",
+        "description": " is a role-playing video game developed by Applibot and Square Enix, who also publishes it for Android and iOS. It forms part of the Compilation of Final Fantasy VII, a series of media spin-offs from the 1997 video game Final Fantasy VII.",
+        "developer": "Square Enix",
+        "rating": "4.4/5",
+        "image": "images/FFEC.jpeg"
+      },
+      {
+        "title": "Lies of P",
+        "description": "is a thrilling soulslike that takes the story of Pinocchio, turns it on its head, and sets it against the darkly elegant backdrop of the Belle Epoque era. It is developed by Neowiz Games and Round8 Studio, and published by Neowiz Games.",
+        "developer": "Neowiz Games",
+        "rating": "9/10",
+        "image": "images/liesofP.jpg"
+      },
+      {
+        "title": "Payday 3",
+        "description": " is a first-person shooter game developed by Starbreeze Studios and published by Deep Silver. It is a sequel to Payday 2, and is also the third installment in the Payday series of video games. The game was released on September 21, 2023 for Playstation 5, Xbox Series X/S, and Microsoft Windows.",
+        "developer": "Starbreeze Studios",
+        "rating": "6/10",
+        "image": "images/payday3.jpeg"
+      },
+      {
+        "title": "EA Sports FC 24",
+        "description": " is an upcoming football video game, developed by EA Vancouver and EA Romania and published by EA Sports serving as the inaugural installment in the EA Sports FC series following the conclusion of EA's partnership with FIFA, and the 31st overall installment, it is set to launch worldwide on 29 September 2023.",
+        "developer": "EA Sports",
+        "rating": "TBD",
+        "image": "images/FC24.jpeg"
+      },
+      {
+        "title": "The Crew Motorfest",
+        "description": " is a 2023 racing video game developed by Ubisoft Ivory Tower and published by Ubisoft for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S. It is the sequel to 2018's The Crew 2 and the third game in The Crew series, and was released on September 14, 2023.",
+        "developer": "Ubisoft",
+        "rating": "7.8/10",
+        "image": "images/TCMF.jpeg"
+      },
+      {
+        "title": "NBA 2K24",
+        "description": " is a 2023 basketball video game developed by Visual Concepts and published by 2K, based on the National Basketball Association (NBA). It is the 25th installment in the NBA 2K franchise and is the successor to NBA 2K23.",
+        "developer": "2K",
+        "rating": "2/10",
+        "image": "images/NBA24.jpg"
+      }
+    ]
+  }
+  
