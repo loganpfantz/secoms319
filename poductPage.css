@@ -1,0 +1,22 @@
+.name{
+    font-size:10px;
+}
+.releaseDate{
+    font-size:8px
+}
+.manufacturer{
+    font-size:8px;
+}
+.rating{
+    font-size:8px;
+}
+#posterArea{
+    background-color: grey;
+    margin:1px;
+}
+h1{
+    font-size:large;
+    font-style:oblique;
+    font-family:Georgia;
+    color:crimson
+}
