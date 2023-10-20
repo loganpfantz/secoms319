@@ -1,3 +1,12 @@
+.info{
+    width: 200px;
+    font-size:16px;
+    border:5px;
+    border-radius:20px;
+    border-color:rgb(184, 0, 0);
+    background-color:grey;
+}
+
 .name{
     font-size:10px;
 }
@@ -14,6 +23,7 @@
     background-color: grey;
     margin:1px;
 }
+
 h1{
     font-size:large;
     font-style:oblique;

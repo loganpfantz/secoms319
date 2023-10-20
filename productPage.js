@@ -10,5 +10,10 @@ fetch('consoles.json')
 
 
 function displayData(data){
-    console.log(data.PS5);
+    let title = data.PS5.name;
+    let mainContainer = documnet.getElementById("product");
+
+    title.addChild(data);
+
+    console.log(title);
 }
