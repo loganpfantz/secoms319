@@ -56,17 +56,19 @@ function loadGames(myGames) {
     txtGame.innerHTML = `<p class="card-text"> <strong>${title}</strong> ${description}</p>`;
 
     let gameDeveloper = document.createElement("h6");
-    gameDeveloper.innerHTML = `<h6 class = gameDev>${developer}</h6>`;
+    gameDeveloper.innerHTML = `<h6 class="gameDev">${developer}</h6>`;
 
     let rating = myGames.games[i].rating;
     let ratingElement = document.createElement("small");
     ratingElement.innerHTML = `<strong>Rating: ${rating}</strong>`;
+
 
     if (myGames.games[i].title === "Starfield") {
       imgGame1.appendChild(imgGame);
       txtGame1.appendChild(txtGame);
       gameDev1.appendChild(gameDeveloper);
       rating1.appendChild(ratingElement);
+
     } else if (myGames.games[i].title === "Baldur's Gate 3") {
       imgGame2.appendChild(imgGame);
       txtGame2.appendChild(txtGame);

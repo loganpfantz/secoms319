@@ -1,82 +1,51 @@
 /* details-page.css */
 
+#gameTitle{
+  font-size: 80px;
+  text-align: center;
+}
+
 .main-data {
-    padding: 50px; /* Adjust this value as needed to control the spacing around the content */
+    padding: 50px;
     background-color: #f7f7f7; /* Set the background color */
     min-height: calc(100vh - 150px); /* Calculate the minimum height of the section (viewport height minus header and footer) */
+    margin: 15px;
+    border: 3px solid #000;
+    border-radius: 10px;
 }
 
-#imgGame1 {
-    max-width: 500px;
-    max-height: 500px;
-    position: absolute;
-    top: 60%;
-    left: 20%;
-    transform: translate(-50%, -50%);
+#image {
+    max-width: 600px;
+    max-height: 600px;
+    display: block;
+    margin: 8px auto;
 }
 
-#textGame1 {
-    font-size: 24px; /* Set the font size to 24 pixels (adjust as needed) */
+.premise-text{
+    font-size: x-large;
 }
 
+#details {
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 10px; /* Add some padding for better visibility */
+    font-size: large;
+  }
 
+  #comments-header{
+    margin-top: 70px;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
 
-#card2{
-    margin-left: 40%;
-    border-bottom: 4px solid darkgrey;
-    padding: 70px;
-}
-
-.main-data{
-    border: 4px black;
-}
-
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-body{
-  background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-}
-
-.searchTerm {
-  width: 100%;
-  border: 3px solid #00B4CC;
-  border-right: none;
-  padding: 5px;
-  height: 20px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #9DBFAF;
-}
-
-.searchTerm:focus{
-  color: #00B4CC;
-}
-
-.searchButton {
-  width: 40px;
-  height: 36px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-/*Resize the wrap to see the search bar change!*/
-.wrap{
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+  #comments{
+    margin-top: 10px;
+    margin-left: 60px;
+    margin-right: 80px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+  }
