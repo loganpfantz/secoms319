@@ -1,4 +1,4 @@
-fetch("videogames.json")
+fetch("./videogames.json")
   .then((response) => response.json())
   .then((myGames) => loadGames(myGames));
 

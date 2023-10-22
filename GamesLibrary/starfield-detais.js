@@ -1,23 +1,23 @@
-fetch("videogames.json")
+fetch("../videogames.json")
   .then((response) => response.json())
   .then((myGames) => loadGames(myGames));
 
 function loadGames(myGames) {
-  var imgGame5 = document.getElementById("imgGame5");
+  var imgGame1 = document.getElementById("imgGame1");
 
-  var platform5 = document.getElementById("platform5");
+  var platform1 = document.getElementById("platform1");
 
-  var releaseDate5 = document.getElementById("releaseDate5");
+  var releaseDate1 = document.getElementById("releaseDate1");
   
-  var premise5 = document.getElementById("premise5");
+  var premise1 = document.getElementById("premise1");
   
-  var genre5 = document.getElementById("genre5");
+  var genre1 = document.getElementById("genre1");
   
-  var publisher5 = document.getElementById("publisher5");
+  var publisher1 = document.getElementById("publisher1");
   
-  var gameDev5 = document.getElementById("gameDev5");
+  var gameDev1 = document.getElementById("gameDev1");
   
-  var rating5 = document.getElementById("rating5");
+  var rating1 = document.getElementById("rating1");
   
   for (var i = 0; i < myGames.games.length; i++) {
     let image = myGames.games[i].image;
@@ -29,7 +29,7 @@ function loadGames(myGames) {
     let publisher = myGames.games[i].publisher;
 
     let imgGame = document.createElement("div");
-    imgGame.innerHTML = `<img src="${image}" class="card-img-top" alt="..."></img>`;
+    imgGame.innerHTML = `<img src="../${image}" class="card-img-top" alt="..."></img>`;
 
     let gamePlatform = document.createElement("p");
     gamePlatform.innerHTML = `<strong>Platform(s): </strong>${platform}`;
@@ -53,15 +53,15 @@ function loadGames(myGames) {
     let gamePublisher = document.createElement("p");
     gamePublisher.innerHTML = `<strong>Publisher: </strong>${publisher}`;
 
-    if (myGames.games[i].title === "Lies of P") {
-      imgGame5.appendChild(imgGame);
-      platform5.appendChild(gamePlatform);
-      releaseDate5.appendChild(gameDate);
-      gameDev5.appendChild(gameDeveloper);
-      rating5.appendChild(ratingElement);
-      premise5.appendChild(premiseText);
-      genre5.appendChild(gameGenre);
-      publisher5.appendChild(gamePublisher);
+    if (myGames.games[i].title === "Starfield") {
+      imgGame1.appendChild(imgGame);
+      platform1.appendChild(gamePlatform);
+      releaseDate1.appendChild(gameDate);
+      gameDev1.appendChild(gameDeveloper);
+      rating1.appendChild(ratingElement);
+      premise1.appendChild(premiseText);
+      genre1.appendChild(gameGenre);
+      publisher1.appendChild(gamePublisher);
 
     } 
   } // end of for

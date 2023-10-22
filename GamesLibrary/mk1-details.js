@@ -1,23 +1,23 @@
-fetch("videogames.json")
+fetch("../videogames.json")
   .then((response) => response.json())
   .then((myGames) => loadGames(myGames));
 
 function loadGames(myGames) {
-  var imgGame1 = document.getElementById("imgGame1");
+  var imgGame3 = document.getElementById("imgGame3");
 
-  var platform1 = document.getElementById("platform1");
+  var platform3 = document.getElementById("platform3");
 
-  var releaseDate1 = document.getElementById("releaseDate1");
+  var releaseDate3 = document.getElementById("releaseDate3");
   
-  var premise1 = document.getElementById("premise1");
+  var premise3 = document.getElementById("premise3");
   
-  var genre1 = document.getElementById("genre1");
+  var genre3 = document.getElementById("genre3");
   
-  var publisher1 = document.getElementById("publisher1");
+  var publisher3 = document.getElementById("publisher3");
   
-  var gameDev1 = document.getElementById("gameDev1");
+  var gameDev3 = document.getElementById("gameDev3");
   
-  var rating1 = document.getElementById("rating1");
+  var rating3 = document.getElementById("rating3");
   
   for (var i = 0; i < myGames.games.length; i++) {
     let image = myGames.games[i].image;
@@ -29,7 +29,7 @@ function loadGames(myGames) {
     let publisher = myGames.games[i].publisher;
 
     let imgGame = document.createElement("div");
-    imgGame.innerHTML = `<img src="${image}" class="card-img-top" alt="..."></img>`;
+    imgGame.innerHTML = `<img src="../${image}" class="card-img-top" alt="..."></img>`;
 
     let gamePlatform = document.createElement("p");
     gamePlatform.innerHTML = `<strong>Platform(s): </strong>${platform}`;
@@ -53,15 +53,15 @@ function loadGames(myGames) {
     let gamePublisher = document.createElement("p");
     gamePublisher.innerHTML = `<strong>Publisher: </strong>${publisher}`;
 
-    if (myGames.games[i].title === "Starfield") {
-      imgGame1.appendChild(imgGame);
-      platform1.appendChild(gamePlatform);
-      releaseDate1.appendChild(gameDate);
-      gameDev1.appendChild(gameDeveloper);
-      rating1.appendChild(ratingElement);
-      premise1.appendChild(premiseText);
-      genre1.appendChild(gameGenre);
-      publisher1.appendChild(gamePublisher);
+    if (myGames.games[i].title === "Mortal Kombat 1") {
+      imgGame3.appendChild(imgGame);
+      platform3.appendChild(gamePlatform);
+      releaseDate3.appendChild(gameDate);
+      gameDev3.appendChild(gameDeveloper);
+      rating3.appendChild(ratingElement);
+      premise3.appendChild(premiseText);
+      genre3.appendChild(gameGenre);
+      publisher3.appendChild(gamePublisher);
 
     } 
   } // end of for

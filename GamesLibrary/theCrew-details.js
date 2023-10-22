@@ -1,23 +1,23 @@
-fetch("videogames.json")
+fetch("../videogames.json")
   .then((response) => response.json())
   .then((myGames) => loadGames(myGames));
 
 function loadGames(myGames) {
-  var imgGame3 = document.getElementById("imgGame3");
+  var imgGame8 = document.getElementById("imgGame8");
 
-  var platform3 = document.getElementById("platform3");
+  var platform8 = document.getElementById("platform8");
 
-  var releaseDate3 = document.getElementById("releaseDate3");
+  var releaseDate8 = document.getElementById("releaseDate8");
   
-  var premise3 = document.getElementById("premise3");
+  var premise8 = document.getElementById("premise8");
   
-  var genre3 = document.getElementById("genre3");
+  var genre8 = document.getElementById("genre8");
   
-  var publisher3 = document.getElementById("publisher3");
+  var publisher8 = document.getElementById("publisher8");
   
-  var gameDev3 = document.getElementById("gameDev3");
+  var gameDev8 = document.getElementById("gameDev8");
   
-  var rating3 = document.getElementById("rating3");
+  var rating8 = document.getElementById("rating8");
   
   for (var i = 0; i < myGames.games.length; i++) {
     let image = myGames.games[i].image;
@@ -29,7 +29,7 @@ function loadGames(myGames) {
     let publisher = myGames.games[i].publisher;
 
     let imgGame = document.createElement("div");
-    imgGame.innerHTML = `<img src="${image}" class="card-img-top" alt="..."></img>`;
+    imgGame.innerHTML = `<img src="../${image}" class="card-img-top" alt="..."></img>`;
 
     let gamePlatform = document.createElement("p");
     gamePlatform.innerHTML = `<strong>Platform(s): </strong>${platform}`;
@@ -53,15 +53,15 @@ function loadGames(myGames) {
     let gamePublisher = document.createElement("p");
     gamePublisher.innerHTML = `<strong>Publisher: </strong>${publisher}`;
 
-    if (myGames.games[i].title === "Mortal Kombat 1") {
-      imgGame3.appendChild(imgGame);
-      platform3.appendChild(gamePlatform);
-      releaseDate3.appendChild(gameDate);
-      gameDev3.appendChild(gameDeveloper);
-      rating3.appendChild(ratingElement);
-      premise3.appendChild(premiseText);
-      genre3.appendChild(gameGenre);
-      publisher3.appendChild(gamePublisher);
+    if (myGames.games[i].title === "The Crew Motorfest") {
+      imgGame8.appendChild(imgGame);
+      platform8.appendChild(gamePlatform);
+      releaseDate8.appendChild(gameDate);
+      gameDev8.appendChild(gameDeveloper);
+      rating8.appendChild(ratingElement);
+      premise8.appendChild(premiseText);
+      genre8.appendChild(gameGenre);
+      publisher8.appendChild(gamePublisher);
 
     } 
   } // end of for

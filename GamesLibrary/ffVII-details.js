@@ -1,23 +1,23 @@
-fetch("videogames.json")
+fetch("../videogames.json")
   .then((response) => response.json())
   .then((myGames) => loadGames(myGames));
 
 function loadGames(myGames) {
-  var imgGame8 = document.getElementById("imgGame8");
+  var imgGame4 = document.getElementById("imgGame4");
 
-  var platform8 = document.getElementById("platform8");
+  var platform4 = document.getElementById("platform4");
 
-  var releaseDate8 = document.getElementById("releaseDate8");
+  var releaseDate4 = document.getElementById("releaseDate4");
   
-  var premise8 = document.getElementById("premise8");
+  var premise4 = document.getElementById("premise4");
   
-  var genre8 = document.getElementById("genre8");
+  var genre4 = document.getElementById("genre4");
   
-  var publisher8 = document.getElementById("publisher8");
+  var publisher4 = document.getElementById("publisher4");
   
-  var gameDev8 = document.getElementById("gameDev8");
+  var gameDev4 = document.getElementById("gameDev4");
   
-  var rating8 = document.getElementById("rating8");
+  var rating4 = document.getElementById("rating4");
   
   for (var i = 0; i < myGames.games.length; i++) {
     let image = myGames.games[i].image;
@@ -29,7 +29,7 @@ function loadGames(myGames) {
     let publisher = myGames.games[i].publisher;
 
     let imgGame = document.createElement("div");
-    imgGame.innerHTML = `<img src="${image}" class="card-img-top" alt="..."></img>`;
+    imgGame.innerHTML = `<img src="../${image}" class="card-img-top" alt="..."></img>`;
 
     let gamePlatform = document.createElement("p");
     gamePlatform.innerHTML = `<strong>Platform(s): </strong>${platform}`;
@@ -53,15 +53,15 @@ function loadGames(myGames) {
     let gamePublisher = document.createElement("p");
     gamePublisher.innerHTML = `<strong>Publisher: </strong>${publisher}`;
 
-    if (myGames.games[i].title === "The Crew Motorfest") {
-      imgGame8.appendChild(imgGame);
-      platform8.appendChild(gamePlatform);
-      releaseDate8.appendChild(gameDate);
-      gameDev8.appendChild(gameDeveloper);
-      rating8.appendChild(ratingElement);
-      premise8.appendChild(premiseText);
-      genre8.appendChild(gameGenre);
-      publisher8.appendChild(gamePublisher);
+    if (myGames.games[i].title === "Final Fantasy VII: Ever Crisis") {
+      imgGame4.appendChild(imgGame);
+      platform4.appendChild(gamePlatform);
+      releaseDate4.appendChild(gameDate);
+      gameDev4.appendChild(gameDeveloper);
+      rating4.appendChild(ratingElement);
+      premise4.appendChild(premiseText);
+      genre4.appendChild(gameGenre);
+      publisher4.appendChild(gamePublisher);
 
     } 
   } // end of for

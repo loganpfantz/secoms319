@@ -1,24 +1,24 @@
-fetch("videogames.json")
+fetch("../videogames.json")
   .then((response) => response.json())
   .then((myGames) => loadGames(myGames));
 
 function loadGames(myGames) {
-  var imgGame2 = document.getElementById("imgGame2");
+  var imgGame5 = document.getElementById("imgGame5");
 
-  var platform2 = document.getElementById("platform2");
+  var platform5 = document.getElementById("platform5");
 
-  var releaseDate2 = document.getElementById("releaseDate2");
-
-  var premise2 = document.getElementById("premise2");
-
-  var genre2 = document.getElementById("genre2");
-
-  var publisher2 = document.getElementById("publisher2");
-
-  var gameDev2 = document.getElementById("gameDev2");
-
-  var rating2 = document.getElementById("rating2");
-
+  var releaseDate5 = document.getElementById("releaseDate5");
+  
+  var premise5 = document.getElementById("premise5");
+  
+  var genre5 = document.getElementById("genre5");
+  
+  var publisher5 = document.getElementById("publisher5");
+  
+  var gameDev5 = document.getElementById("gameDev5");
+  
+  var rating5 = document.getElementById("rating5");
+  
   for (var i = 0; i < myGames.games.length; i++) {
     let image = myGames.games[i].image;
     let platform = myGames.games[i].platforms;
@@ -29,7 +29,7 @@ function loadGames(myGames) {
     let publisher = myGames.games[i].publisher;
 
     let imgGame = document.createElement("div");
-    imgGame.innerHTML = `<img src="${image}" class="card-img-top" alt="..."></img>`;
+    imgGame.innerHTML = `<img src="../${image}" class="card-img-top" alt="..."></img>`;
 
     let gamePlatform = document.createElement("p");
     gamePlatform.innerHTML = `<strong>Platform(s): </strong>${platform}`;
@@ -53,16 +53,16 @@ function loadGames(myGames) {
     let gamePublisher = document.createElement("p");
     gamePublisher.innerHTML = `<strong>Publisher: </strong>${publisher}`;
 
-    if (myGames.games[i].title === "Baldur's Gate 3") {
-      imgGame2.appendChild(imgGame);
-      platform2.appendChild(gamePlatform);
-      releaseDate2.appendChild(gameDate);
-      gameDev2.appendChild(gameDeveloper);
-      rating2.appendChild(ratingElement);
-      premise2.appendChild(premiseText);
-      genre2.appendChild(gameGenre);
-      publisher2.appendChild(gamePublisher);
-    }
+    if (myGames.games[i].title === "Lies of P") {
+      imgGame5.appendChild(imgGame);
+      platform5.appendChild(gamePlatform);
+      releaseDate5.appendChild(gameDate);
+      gameDev5.appendChild(gameDeveloper);
+      rating5.appendChild(ratingElement);
+      premise5.appendChild(premiseText);
+      genre5.appendChild(gameGenre);
+      publisher5.appendChild(gamePublisher);
 
+    } 
   } // end of for
 } // end of function

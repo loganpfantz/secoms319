@@ -1,23 +1,23 @@
-fetch("videogames.json")
+fetch("../videogames.json")
   .then((response) => response.json())
   .then((myGames) => loadGames(myGames));
 
 function loadGames(myGames) {
-  var imgGame6 = document.getElementById("imgGame6");
+  var imgGame9 = document.getElementById("imgGame9");
 
-  var platform6 = document.getElementById("platform6");
+  var platform9 = document.getElementById("platform9");
 
-  var releaseDate6 = document.getElementById("releaseDate6");
+  var releaseDate9 = document.getElementById("releaseDate9");
   
-  var premise6 = document.getElementById("premise6");
+  var premise9 = document.getElementById("premise9");
   
-  var genre6 = document.getElementById("genre6");
+  var genre9 = document.getElementById("genre9");
   
-  var publisher6 = document.getElementById("publisher6");
+  var publisher9 = document.getElementById("publisher9");
   
-  var gameDev6 = document.getElementById("gameDev6");
+  var gameDev9 = document.getElementById("gameDev9");
   
-  var rating6 = document.getElementById("rating6");
+  var rating9 = document.getElementById("rating9");
   
   for (var i = 0; i < myGames.games.length; i++) {
     let image = myGames.games[i].image;
@@ -29,7 +29,7 @@ function loadGames(myGames) {
     let publisher = myGames.games[i].publisher;
 
     let imgGame = document.createElement("div");
-    imgGame.innerHTML = `<img src="${image}" class="card-img-top" alt="..."></img>`;
+    imgGame.innerHTML = `<img src="../${image}" class="card-img-top" alt="..."></img>`;
 
     let gamePlatform = document.createElement("p");
     gamePlatform.innerHTML = `<strong>Platform(s): </strong>${platform}`;
@@ -53,15 +53,15 @@ function loadGames(myGames) {
     let gamePublisher = document.createElement("p");
     gamePublisher.innerHTML = `<strong>Publisher: </strong>${publisher}`;
 
-    if (myGames.games[i].title === "Payday 3") {
-      imgGame6.appendChild(imgGame);
-      platform6.appendChild(gamePlatform);
-      releaseDate6.appendChild(gameDate);
-      gameDev6.appendChild(gameDeveloper);
-      rating6.appendChild(ratingElement);
-      premise6.appendChild(premiseText);
-      genre6.appendChild(gameGenre);
-      publisher6.appendChild(gamePublisher);
+    if (myGames.games[i].title === "NBA 2K24") {
+      imgGame9.appendChild(imgGame);
+      platform9.appendChild(gamePlatform);
+      releaseDate9.appendChild(gameDate);
+      gameDev9.appendChild(gameDeveloper);
+      rating9.appendChild(ratingElement);
+      premise9.appendChild(premiseText);
+      genre9.appendChild(gameGenre);
+      publisher9.appendChild(gamePublisher);
 
     } 
   } // end of for
