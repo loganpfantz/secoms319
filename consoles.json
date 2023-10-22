@@ -1,7 +1,7 @@
 {
   "PS5": {
     "name": "Playstation 5",
-    "releaseDate:": "November 12, 2020",
+    "releaseDate": "November 12, 2020",
     "developer": "Sony",
     "rating": 5,
     "summary": "The Playstation 5 is Sony's fifth home console and the follow up to the incredibly successful Playstation 4. Despite releasing during the global Covid 19 pandemic, Sony managed to break sales records with the Playstation 5 console. Along with several other tech products in the early 20's, the Playstation 5 remained difficult to find until supply could be reliably established in 2023, three years after the console's initial release.",
@@ -9,7 +9,7 @@
   },
   "XboxSeriesX": {
     "name": "Xbox Series X|S",
-    "releaseDate:": "November 10, 2020",
+    "releaseDate": "November 10, 2020",
     "developer": "Microsoft",
     "rating": 4.5,
     "summary": "The Xbox Series X and S are Microsoft's fourth generation of home consoles. By offering two options, Microsoft allowed gamers access to the next generation of gaming at a cheaper price than ever. Microsoft has done an excellent job with marketing and regaining consumer trust in recent years, but they are still struggling from the failed launch of the Xbox One back in 2013. Despite this, Xbox is gearing up to be the biggest video game maker in the world with the most recent aquistion of Activision Blizzard King.",
@@ -17,7 +17,7 @@
   },
   "NintendoSwitch": {
     "name": "Nintendo Switch",
-    "releaseDate:": "March 3, 2017",
+    "releaseDate": "March 3, 2017",
     "developer": "Nintendo",
     "rating": 5,
     "summary": "The Switch is Nintendo's ninth generation of home consoles. A unique hybrid design allows the Switch to be played both at home and on the go. All games are fully compatible in each mode, making the Switch the first console to provide 'full' games on the go. Traditionally, mobile consoles recieved cut back versions of games as the full game experience wasn't possible on such weak hardware. Nintendo's newest console was released when technology finally allowed for powerful mobile processors.",
@@ -25,11 +25,11 @@
   },
   "SteamDeck": {
     "name": "Steam Deck",
-    "releaseDate:": "February 25, 2022",
+    "releaseDate": "February 25, 2022",
     "developer": "Valve",
     "rating": 5,
     "summary": "The Steam Deck is Valve's first ever console. The mobile focus provides a unique experience that allows for full PC games to be played on the go. An optional dock also provides the option for gamers to connect to a TV or a home console experience if they would prefer.",
-    "picture": "./images/XboxSeriesXS.jpg"
+    "picture": "./images/SteamDeck.jpg"
   },
   "PS4": {
     "name": "Playstation 4",
