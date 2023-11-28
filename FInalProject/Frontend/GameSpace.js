@@ -50,8 +50,6 @@ const GameSpace = () => {
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
   /* HOME */
 
   const homeView = (
@@ -329,7 +327,6 @@ const GameSpace = () => {
                           className="card-img-top"
                         />
                         <div className="card-body">
-                          <h5 className="card-title">{game.title}</h5>
                           <button
                             type="button"
                             className="btn btn-primary mb-2"
@@ -337,6 +334,7 @@ const GameSpace = () => {
                           >
                             Go to game page
                           </button>
+                          <h5 className="card-title">{game.title}</h5>
                           <p className="card-text">{game.description}</p>
                           <div className="d-flex justify-content-between align-items-center">
                             <small className="text-muted">
@@ -497,8 +495,12 @@ const GameSpace = () => {
           <div className="main-data">
             <div className="row row-cols-1 row-cols-sm-2">
               <div id="col1">
-                <div id="image">
-                  <img src={selectedGame.image} alt={selectedGame.title} />
+                <div className="image">
+                  <img
+                    className="image"
+                    src={selectedGame.image}
+                    alt={selectedGame.title}
+                  />
                 </div>
                 <div id="details">
                   <div id="platform1">{selectedGame.platforms}</div>
