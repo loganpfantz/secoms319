@@ -111,14 +111,14 @@ const GameSpace = () => {
             </button>
             <button
               type="button"
-              className="btn btn-lg btn-white-text"
+              className="btn btn-lg btn-white-text2"
               onClick={() => handleViewChange("consolesCatalogue")}
             >
               Consoles Catalogue
             </button>
             <button
               type="button"
-              className="btn btn-lg btn-white-text"
+              className="btn btn-lg btn-white-text2"
               onClick={() => handleViewChange("indexView")}
             >
               About Us
@@ -249,14 +249,14 @@ const GameSpace = () => {
               </button>
               <button
                 type="button"
-                className="btn btn-lg btn-white-text"
+                className="btn btn-lg btn-white-text2"
                 onClick={() => handleViewChange("consolesCatalogue")}
               >
                 Consoles Catalogue
               </button>
               <button
                 type="button"
-                className="btn btn-lg btn-white-text"
+                className="btn btn-lg btn-white-text2"
                 onClick={() => handleViewChange("indexView")}
               >
                 About Us
@@ -452,14 +452,14 @@ const GameSpace = () => {
                 </button>
                 <button
                   type="button"
-                  className="btn btn-lg btn-white-text"
+                  className="btn btn-lg btn-white-text2"
                   onClick={() => handleViewChange("consolesCatalogue")}
                 >
                   Consoles Catalogue
                 </button>
                 <button
                   type="button"
-                  className="btn btn-lg btn-white-text"
+                  className="btn btn-lg btn-white-text2"
                   onClick={() => handleViewChange("indexView")}
                 >
                   About Us

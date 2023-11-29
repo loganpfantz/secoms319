@@ -75,7 +75,17 @@
   background-color: transparent; /* Transparent background */
 }
 
+
+.btn-white-text2 {
+  color: white; /* White text color */
+  background-color: transparent; /* Transparent background */
+}
+
 .btn-white-text:hover {
+  color: yellow; /* Keep text color white on hover */
+}
+
+.btn-white-text2:hover {
   color: red; /* Keep text color white on hover */
 }
 
