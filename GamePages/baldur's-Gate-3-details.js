@@ -1,24 +1,24 @@
-fetch("../videogames.json")
+fetch("./videogames.json")
   .then((response) => response.json())
   .then((myGames) => loadGames(myGames));
 
 function loadGames(myGames) {
-  var imgGame3 = document.getElementById("imgGame3");
+  var imgGame2 = document.getElementById("imgGame2");
 
-  var platform3 = document.getElementById("platform3");
+  var platform2 = document.getElementById("platform2");
 
-  var releaseDate3 = document.getElementById("releaseDate3");
-  
-  var premise3 = document.getElementById("premise3");
-  
-  var genre3 = document.getElementById("genre3");
-  
-  var publisher3 = document.getElementById("publisher3");
-  
-  var gameDev3 = document.getElementById("gameDev3");
-  
-  var rating3 = document.getElementById("rating3");
-  
+  var releaseDate2 = document.getElementById("releaseDate2");
+
+  var premise2 = document.getElementById("premise2");
+
+  var genre2 = document.getElementById("genre2");
+
+  var publisher2 = document.getElementById("publisher2");
+
+  var gameDev2 = document.getElementById("gameDev2");
+
+  var rating2 = document.getElementById("rating2");
+
   for (var i = 0; i < myGames.games.length; i++) {
     let image = myGames.games[i].image;
     let platform = myGames.games[i].platforms;
@@ -53,16 +53,16 @@ function loadGames(myGames) {
     let gamePublisher = document.createElement("p");
     gamePublisher.innerHTML = `<strong>Publisher: </strong>${publisher}`;
 
-    if (myGames.games[i].title === "Mortal Kombat 1") {
-      imgGame3.appendChild(imgGame);
-      platform3.appendChild(gamePlatform);
-      releaseDate3.appendChild(gameDate);
-      gameDev3.appendChild(gameDeveloper);
-      rating3.appendChild(ratingElement);
-      premise3.appendChild(premiseText);
-      genre3.appendChild(gameGenre);
-      publisher3.appendChild(gamePublisher);
+    if (myGames.games[i].title === "Baldur's Gate 3") {
+      imgGame2.appendChild(imgGame);
+      platform2.appendChild(gamePlatform);
+      releaseDate2.appendChild(gameDate);
+      gameDev2.appendChild(gameDeveloper);
+      rating2.appendChild(ratingElement);
+      premise2.appendChild(premiseText);
+      genre2.appendChild(gameGenre);
+      publisher2.appendChild(gamePublisher);
+    }
 
-    } 
   } // end of for
 } // end of function

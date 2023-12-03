@@ -1,23 +1,23 @@
-fetch("../videogames.json")
+fetch("./videogames.json")
   .then((response) => response.json())
   .then((myGames) => loadGames(myGames));
 
 function loadGames(myGames) {
-  var imgGame9 = document.getElementById("imgGame9");
+  var imgGame5 = document.getElementById("imgGame5");
 
-  var platform9 = document.getElementById("platform9");
+  var platform5 = document.getElementById("platform5");
 
-  var releaseDate9 = document.getElementById("releaseDate9");
+  var releaseDate5 = document.getElementById("releaseDate5");
   
-  var premise9 = document.getElementById("premise9");
+  var premise5 = document.getElementById("premise5");
   
-  var genre9 = document.getElementById("genre9");
+  var genre5 = document.getElementById("genre5");
   
-  var publisher9 = document.getElementById("publisher9");
+  var publisher5 = document.getElementById("publisher5");
   
-  var gameDev9 = document.getElementById("gameDev9");
+  var gameDev5 = document.getElementById("gameDev5");
   
-  var rating9 = document.getElementById("rating9");
+  var rating5 = document.getElementById("rating5");
   
   for (var i = 0; i < myGames.games.length; i++) {
     let image = myGames.games[i].image;
@@ -53,15 +53,15 @@ function loadGames(myGames) {
     let gamePublisher = document.createElement("p");
     gamePublisher.innerHTML = `<strong>Publisher: </strong>${publisher}`;
 
-    if (myGames.games[i].title === "NBA 2K24") {
-      imgGame9.appendChild(imgGame);
-      platform9.appendChild(gamePlatform);
-      releaseDate9.appendChild(gameDate);
-      gameDev9.appendChild(gameDeveloper);
-      rating9.appendChild(ratingElement);
-      premise9.appendChild(premiseText);
-      genre9.appendChild(gameGenre);
-      publisher9.appendChild(gamePublisher);
+    if (myGames.games[i].title === "Lies of P") {
+      imgGame5.appendChild(imgGame);
+      platform5.appendChild(gamePlatform);
+      releaseDate5.appendChild(gameDate);
+      gameDev5.appendChild(gameDeveloper);
+      rating5.appendChild(ratingElement);
+      premise5.appendChild(premiseText);
+      genre5.appendChild(gameGenre);
+      publisher5.appendChild(gamePublisher);
 
     } 
   } // end of for
