@@ -1,294 +1,485 @@
-import { useState, useEffect } from "react";
+// Imports
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
-function App() {
-  const [product, setProduct] = useState([]);
-  const [oneProduct, setOneProduct] = useState([]);
-  // new Product
-  const [addNewProduct, setAddNewProduct] = useState({
-    id: 0,
+/////////////////////////////////////////////////////////////////////////////////
+// AllProductsView component
+const AllProductsView = ({ products, onButtonClick }) => {
+  return (
+    <div>
+      <button onClick={() => onButtonClick("home")}>Home</button>
+      <h1>All Products</h1>
+      {products.length === 0 ? (
+        <p>No products available.</p>
+      ) : (
+        <ul>
+          {products.map((product) => (
+            <li key={product.id}>
+              <div>
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  style={{ maxWidth: "80px", maxHeight: "80px" }}
+                />
+                <p>{product.title}</p>
+                <p>${product.price}</p>
+                <p>{product.description}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// CreateProductView component
+const CreateProductView = ({ onCreateProduct, onButtonClick }) => {
+  const [newProduct, setNewProduct] = useState({
     title: "",
-    price: 0.0,
+    price: 0,
     description: "",
     category: "",
-    image: "http://127.0.0.1:4000/images/",
-    rating: 0.0,
+    image: "",
   });
+  const [successMessage, setSuccessMessage] = useState("");
 
-  const [viewer1, setViewer1] = useState(false);
-  const [viewer2, setViewer2] = useState(false);
-  const [viewer4, setViewer4] = useState(false);
-  const [checked4, setChecked4] = useState(false);
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    getAllProducts();
-  }, []);
-
-  function getAllProducts() {
-    fetch("http://localhost:3000/api/get")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Show Catalog of Products :");
-        console.log(data);
-        setProduct(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-    setViewer1(!viewer1);
-  }
-
-  const showAllItems = product.map((el) => (
-    <div key={el.id}>
-      <img src={el.image} width={30} alt="images" /> <br />
-      Title: {el.title} <br />
-      Category: {el.category} <br />
-      Price: {el.price} <br />
-      Rating :{el.rating} <br />
-    </div>
-  ));
-
-  function getOneProduct(id) {
-    console.log(id);
-    if (id >= 1 && id <= 20) {
-      fetch("http://localhost:3000/api/getFromId/" + id)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log("Show one product :", id);
-          console.log(data);
-          setOneProduct(data);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
-      setViewer2(!viewer2);
-    } else {
-      console.log("Wrong number of Product id.");
-    }
-  }
-
-  const showOneItem = oneProduct.map((el) => (
-    <div key={el.id}>
-      <img src={el.image} width={30} alt="images" /> <br />
-      Title: {el.title} <br />
-      Category: {el.category} <br />
-      Price: {el.price} <br />
-      Rating: {el.rating} <br />
-    </div>
-  ));
-
-  function handleChange(evt) {
-    const value = evt.target.value;
-    if (evt.target.name === "id") {
-      setAddNewProduct({ ...addNewProduct, id: value });
-    } else if (evt.target.name === "title") {
-      setAddNewProduct({ ...addNewProduct, title: value });
-    } else if (evt.target.name === "price") {
-      setAddNewProduct({ ...addNewProduct, price: value });
-    } else if (evt.target.name === "description") {
-      setAddNewProduct({ ...addNewProduct, description: value });
-    } else if (evt.target.name === "category") {
-      setAddNewProduct({ ...addNewProduct, category: value });
-    } else if (evt.target.name === "image") {
-      setAddNewProduct({ ...addNewProduct, image: value });
-    } else if (evt.target.name === "rating") {
-      setAddNewProduct({ ...addNewProduct, rating: value });
-    }
-  }
-
-  function handleOnSubmit(e) {
+  // Event handler for form submission to create a new product
+  const handleCreateProductSubmit = async (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/api/create", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(addNewProduct),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Post a new product completed");
-        console.log(data);
-        if (data) {
-          const value = Object.values(data);
-          alert(value);
-        }
-      })
-      .catch((error) => {
-        console.error("Error creating product:", error);
-      });
-  }
-
-  function getOneByOneProductNext() {
-    if (product.length > 0) {
-      if (index === product.length - 1) setIndex(0);
-      else setIndex(index + 1);
-      if (product.length > 0) setViewer4(true);
-      else setViewer4(false);
+    try {
+      await onCreateProduct(newProduct);
+      setSuccessMessage("Product successfully added!");
+    } catch (error) {
+      console.error("Error creating a new product:", error);
+      setSuccessMessage("Failed to add the product. Please try again.");
     }
-  }
+  };
 
-  function getOneByOneProductPrev() {
-    if (product.length > 0) {
-      if (index === 0) setIndex(product.length - 1);
-      else setIndex(index - 1);
-      if (product.length > 0) setViewer4(true);
-      else setViewer4(false);
-    }
-  }
-
-  function deleteOneProduct(deleteid) {
-    console.log("Product to delete :", deleteid);
-    fetch("http://localhost:3000/api/delete", {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id: deleteid }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Delete a product completed : ", deleteid);
-        console.log(data);
-        if (data) {
-          const key = Object.keys(data);
-          const value = Object.values(data);
-          alert(key + value);
-        }
-      })
-      .catch((error) => {
-        console.error("Error deleting product:", error);
-      });
-    getAllProducts();
-  }
-
-  useEffect(() => {
-    getAllProducts();
-  }, [checked4]);
+  // Update the form fields when they change
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewProduct((prevProduct) => ({
+      ...prevProduct,
+      [name]: value,
+    }));
+  };
 
   return (
     <div>
-      <h1>Catalog of Products</h1>
+      <button onClick={() => onButtonClick("home")}>Back to Home</button>
+      <h2>Create New Product</h2>
+      <form onSubmit={handleCreateProductSubmit}>
+        <label>
+          Title:
+          <input
+            type="text"
+            name="title"
+            value={newProduct.title}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Price:
+          <input
+            type="number"
+            name="price"
+            value={newProduct.price}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Description:
+          <textarea
+            name="description"
+            value={newProduct.description}
+            onChange={handleInputChange}
+          />
+        </label>
+        <button type="submit">Create Product</button>
+      </form>
+      {successMessage && <p>{successMessage}</p>}
+    </div>
+  );
+};
 
-      {/* Display All Products */}
-      <div>
-        <h3>Show all available Products.</h3>
-        <button onClick={() => getAllProducts()}>Show All ...</button>
-        {viewer1 && <div>Products: {showAllItems}</div>}
-      </div>
+/////////////////////////////////////////////////////////////////////////////////
 
-      {/* Display a Single Product */}
-      <div>
-        <h3>Show one Product by Id:</h3>
+// UpdatePriceView component
+const UpdatePriceView = ({ onUpdatePrice, onButtonClick }) => {
+  const [productId, setProductId] = useState("");
+  const [newPrice, setNewPrice] = useState(0);
+  const [product, setProduct] = useState(null);
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  // Event handler for fetching product details
+  const handleFetchProduct = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:8081/api/getFromId/${productId}`
+      );
+      if (!response.ok) {
+        throw new Error("Product not found");
+      }
+      const productData = await response.json();
+      setProduct(productData);
+      setError("");
+      setSuccessMessage("");
+    } catch (error) {
+      console.error("Error fetching product:", error);
+      setProduct(null);
+      setError("Error fetching product details");
+    }
+  };
+
+  // Event handler for updating the product price
+  const handleUpdatePrice = async () => {
+    try {
+      if (!productId) {
+        throw new Error("Product ID is required");
+      }
+
+      // Update the price in the state before calling onUpdatePrice
+      setProduct((prevProduct) => ({
+        ...prevProduct,
+        price: parseFloat(newPrice), // This ensures the price is a number
+      }));
+
+      await onUpdatePrice(productId, newPrice);
+      setError("");
+      setSuccessMessage("Price updated successfully!");
+    } catch (error) {
+      console.error("Error updating price:", error);
+      setError("Failed to update price. Please try again.");
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={() => onButtonClick("home")}>Back to Home</button>
+      <h2>Update Product Price</h2>
+      <label>
+        Product ID:
         <input
           type="text"
-          id="message"
-          name="message"
-          placeholder="Enter Product ID"
-          onChange={(e) => getOneProduct(e.target.value)}
+          value={productId}
+          onChange={(e) => setProductId(e.target.value)}
         />
-        {viewer2 && <div>Product: {showOneItem}</div>}
-      </div>
+      </label>
+      <button onClick={handleFetchProduct}>Fetch Product</button>
+      {product && (
+        <div>
+          <p>Product: {product.title}</p>
+          <p>Current Price: ${product.price}</p>
+          <label>
+            New Price:
+            <input
+              type="number"
+              value={newPrice}
+              onChange={(e) => setNewPrice(e.target.value)}
+            />
+          </label>
+          <button onClick={handleUpdatePrice}>Update Price</button>
+        </div>
+      )}
+      {error && <p>{error}</p>}
+      {successMessage && <p>{successMessage}</p>}
+    </div>
+  );
+};
 
-      {/* Add New Product Form */}
-      <div>
-        <h3>Add a new product:</h3>
-        <form onSubmit={handleOnSubmit}>
-          <input
-            type="number"
-            placeholder="id?"
-            name="id"
-            value={addNewProduct.id}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="title?"
-            name="title"
-            value={addNewProduct.title}
-            onChange={handleChange}
-          />
-          <input
-            type="number"
-            placeholder="price?"
-            name="price"
-            value={addNewProduct.price}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="description?"
-            name="description"
-            value={addNewProduct.description}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="category?"
-            name="category"
-            value={addNewProduct.category}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="image?"
-            name="image"
-            value={addNewProduct.image}
-            onChange={handleChange}
-          />
-          <input
-            type="number"
-            placeholder="rate?"
-            name="rating"
-            value={addNewProduct.rating}
-            onChange={handleChange}
-          />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+/////////////////////////////////////////////////////////////////////////////////
 
-      {/* Delete a Product */}
-      <div>
-        <h3>Delete one product:</h3>
+// StudentInformationView component
+const StudentInformationView = ({ onButtonClick }) => {
+  return (
+    <div>
+      <button onClick={() => onButtonClick("home")}>Home</button>
+      <h1>Student Information</h1>
+      <p>Student 1: Jesus Soto, jhsoto@iastate.edu</p>
+      <p>Student 2: Logan Pfantz, lwpfantz@iastate.edu</p>
+      <h2>Project Details</h2>
+      <p>Course Number: ComS 319</p>
+      <p>Course Name: Construction of User Interfaces</p>
+      <p>Date: 12/10/2023</p>
+      <p>Professor Name: Abraham Aldaco</p>
+      <p>
+       In this project we developed a MERN (MongoDB, Express, React, Nodejs) 
+        application to manage a product catalog using the "https://fakestoreapi.com/products" dataset. 
+        We implemented key CRUD functionalities and ensured a well-organized, user-friendly interface.
+      </p>
+    </div>
+  );
+};
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// DeleteProductView component
+const DeleteProductView = ({ onDeleteProduct, onButtonClick }) => {
+  const [productId, setProductId] = useState("");
+  const [product, setProduct] = useState(null);
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  // Event handler for fetching product details
+  const handleFetchProduct = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:8081/api/getFromId/${productId}`
+      );
+      if (!response.ok) {
+        throw new Error("Product not found");
+      }
+      const productData = await response.json();
+      setProduct(productData);
+      setError("");
+      setSuccessMessage("");
+    } catch (error) {
+      console.error("Error fetching product:", error);
+      setProduct(null);
+      setError("Error fetching product details");
+    }
+  };
+
+  // Event handler for deleting the product
+  const handleDeleteProduct = async () => {
+    try {
+      if (!productId) {
+        throw new Error("Product ID is required");
+      }
+
+      await onDeleteProduct(productId);
+      setError("");
+      setSuccessMessage("Product deleted successfully!");
+    } catch (error) {
+      console.error("Error deleting product:", error);
+      setError("Failed to delete product. Please try again.");
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={() => onButtonClick("home")}>Back to Home</button>
+      <h2>Delete Product</h2>
+      <label>
+        Product ID:
         <input
-          type="checkbox"
-          id="acceptdelete"
-          name="acceptdelete"
-          checked={checked4}
-          onChange={(e) => setChecked4(!checked4)}
+          type="text"
+          value={productId}
+          onChange={(e) => setProductId(e.target.value)}
         />
-        <button onClick={() => getOneByOneProductPrev()}>Prev</button>
-        <button onClick={() => getOneByOneProductNext()}>Next</button>
-        <button onClick={() => deleteOneProduct(product[index]?.id)}>
-          Delete
-        </button>
-        {checked4 && product[index] && (
-          <div key={product[index].id}>
-            <img src={product[index].image} width={30} alt="product" /> <br />
-            Id: {product[index].id} <br />
-            Title: {product[index].title} <br />
-            Category: {product[index].category} <br />
-            Price: {product[index].price} <br />
-            Rating: {product[index].rating.rate} <br />
-          </div>
-        )}
-      </div>
+      </label>
+      <button onClick={handleFetchProduct}>Fetch Product</button>
+      {product && (
+        <div>
+          <p>Product: {product.title}</p>
+          <p>Price: ${product.price}</p>
+          <p>Description: {product.description}</p>
+          {confirmDelete ? (
+            <div>
+              <p>Are you sure you want to delete this product?</p>
+              <button onClick={handleDeleteProduct}>Yes, Delete</button>
+              <button onClick={() => setConfirmDelete(false)}>Cancel</button>
+            </div>
+          ) : (
+            <button onClick={() => setConfirmDelete(true)}>
+              Delete Product
+            </button>
+          )}
+        </div>
+      )}
+      {error && <p>{error}</p>}
+      {successMessage && <p>{successMessage}</p>}
+    </div>
+  );
+};
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// App component
+function App() {
+  // State to hold the product data
+  const [products, setProducts] = useState([]);
+  const [currentView, setCurrentView] = useState("home");
+
+  // Fetch data from API when the component mounts
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:8081/api/get");
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array to run the effect only once
+
+  // Event handler to switch views
+  const handleViewChange = (view) => {
+    setCurrentView(view);
+  };
+
+  // Event handler to create new product
+  const handleCreateProduct = async (newProduct) => {
+    try {
+      const response = await fetch("http://localhost:8081/api/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to create a new product");
+      }
+
+      // Fetch the updated list of products after creating a new product
+      const updatedProducts = await response.json();
+
+      // Ensure that the product IDs are strings
+      const productsWithStringsIds = updatedProducts.map((product) => ({
+        ...product,
+        id: product.id.toString(),
+      }));
+
+      setProducts(productsWithStringsIds);
+
+      setCurrentView("allProducts");
+    } catch (error) {
+      console.error("Error creating a new product:", error);
+      throw error;
+    }
+  };
+
+  // Function to fetch the updated list of products
+  const fetchUpdatedProducts = async () => {
+    try {
+      const response = await fetch("http://localhost:8081/api/get");
+      if (!response.ok) {
+        throw new Error("Failed to fetch updated products");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching updated products:", error);
+      return [];
+    }
+  };
+
+  // Event handler for updating the product price
+  const handleUpdatePrice = async (productId, newPrice) => {
+    try {
+      const response = await fetch("http://localhost:8081/api/updatePrice", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: productId, newPrice: newPrice }),
+      });
+
+      if (!response.ok) {
+        const errorMessage = await response.text();
+        throw new Error(
+          `Failed to update the price. Server response: ${errorMessage}`
+        );
+      }
+
+      // Fetch the updated list of products after updating the price
+      const updatedProducts = await fetchUpdatedProducts();
+      setProducts(updatedProducts);
+    } catch (error) {
+      console.error("Error updating the price:", error);
+      throw error;
+    }
+  };
+
+  // Event handler for deleting the product
+  const handleDeleteProduct = async (productId) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8081/api/delete/${productId}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (!response.ok) {
+        const errorMessage = await response.text();
+        throw new Error(
+          `Failed to delete the product. Server response: ${errorMessage}`
+        );
+      }
+
+      // Fetch the updated list of products after deleting the product
+      const updatedProducts = await fetchUpdatedProducts();
+      setProducts(updatedProducts);
+    } catch (error) {
+      console.error("Error deleting the product:", error);
+      throw error;
+    }
+  };
+  return (
+    <div className="App">
+      {currentView === "home" && (
+        <div>
+          <h1>Home</h1>
+          <button onClick={() => handleViewChange("allProducts")}>
+            All Products
+          </button>
+          <button onClick={() => handleViewChange("createProduct")}>
+            Create Product
+          </button>
+          <button onClick={() => handleViewChange("updatePrice")}>
+            Update Price
+          </button>
+          <button onClick={() => handleViewChange("deleteProduct")}>
+            Delete Product
+          </button>
+          <button onClick={() => handleViewChange("studentInformation")}>
+            Student Information
+          </button>
+        </div>
+      )}
+
+      {currentView === "allProducts" && (
+        <AllProductsView products={products} onButtonClick={handleViewChange} />
+      )}
+
+      {currentView === "createProduct" && (
+        <CreateProductView
+          onCreateProduct={handleCreateProduct}
+          onButtonClick={handleViewChange}
+        />
+      )}
+
+      {currentView === "updatePrice" && (
+        <UpdatePriceView
+          onUpdatePrice={handleUpdatePrice}
+          onButtonClick={handleViewChange}
+        />
+      )}
+
+      {currentView === "deleteProduct" && (
+        <DeleteProductView
+          onDeleteProduct={handleDeleteProduct}
+          onButtonClick={handleViewChange}
+        />
+      )}
+
+      {currentView === "studentInformation" && (
+        <StudentInformationView onButtonClick={handleViewChange} />
+      )}
     </div>
   );
 }
