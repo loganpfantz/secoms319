@@ -1,0 +1,122 @@
+{
+    "games": [
+      {
+        "id": 1,
+        "title": "Starfield",
+        "description": " is an action role-playing game developed by Bethesda Game Studios and published by Bethesda Softworks. It was announced during Bethesda's E3 presentation in 2018. The game takes place in a space-themed setting, and is the first new intellectual property developed by Bethesda in 25 years.",
+        "developer": "Bethesda Game Studios",
+        "rating": "7/10",
+        "image": "images/Starfield-Header.jpg",
+        "premise": "It is the year 2330. Humanity has left Earth behind and spread among the stars, colonizing a small pocket of the galaxy known as the Settled Systems. However, the pioneering spirit that drove the initial diaspora has long since faded and exploration efforts beyond known space have dwindled. When the player stumbles across an alien artifact and experiences a vision, they cross paths with Constellation, the last group of space explorers, who are endeavoring to solve the greatest mystery of all: what is out there?",
+        "platforms": "PC, Xbox Series X/S, PlayStation 5",
+        "release_date": "September 6, 2023",
+        "genre": "Sci-Fi, RPG",
+        "publisher": "Bethesda Softworks"
+      },
+      {
+        "id": 2,
+        "title": "Baldur's Gate 3",
+        "description": " is a role-playing video game developed and published by Larian Studios. It is the third main game in the Baldur's Gate series, which is based on the Dungeons & Dragons tabletop role-playing system.",
+        "developer": "Larian Studios",
+        "rating": "10/10",
+        "image": "images/badlur'sGate3.jpg",
+        "premise": "It is a time of uncertainty and danger in the Forgotten Realms. The city of Baldur's Gate, once a thriving hub of civilization, has fallen into chaos and darkness. An enigmatic, mind-flayer parasite known as the 'Absolute' threatens to plunge the world into oblivion. As a hero chosen by fate, you must venture forth into this dark and treacherous realm, filled with magic, monsters, and malevolence. Form a party of diverse and intriguing companions, each with their own secrets and destinies. Your choices and actions will shape not only your character but the fate of the entire realm. Uncover the truth behind the mind-flayer invasion, face off against formidable foes, and make decisions that carry profound consequences. Will you rise as a savior, or will darkness prevail? The legacy of Baldur's Gate rests on your shoulders as you embark on an epic role-playing adventure that promises to redefine the future of this iconic city.",
+        "platforms": "PC, Xbox Series X/S, PlayStation 5",
+        "release_date": "August 3, 2023",
+        "genre": "Role-Playing, Dungeons & Dragons",
+        "publisher": "Larian Studios"
+      },
+      {
+        "id": 3,
+        "title": "Mortal Kombat 1",
+        "description": " is a fighting game developed by NetherRealm Studios and published by Warner Bros. Games. It is the twelfth main installment in the Mortal Kombat series, serving as both a sequel to Mortal Kombat 11 and the series' second reboot, following Mortal Kombat.",
+        "developer": "NetherRealm Studios",
+        "rating": "7/10",
+        "image": "images/MortalKombat1.jpeg",
+        "premise": "Mortal Kombat’s genre-defining story mode kontinues. Reflecting Fire God Liu Kang’s vision of perfection, Mortal Kombat 1’s brand new universe is familiar, yet radically altered. And potentially, more dangerous than ever. Discover the forces set to undermine Liu Kang’s New Era. Fight against the invading forces that threaten your timeline. Invasions is a dynamic single player campaign with a variety of distinct challenges. With built in progression and RPG mechanics, mixed with MK1’s incredible fighting action, Invasions provides deep, and engaging challenges, and a ton of rewards along the way.",
+        "platforms": "PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S, Microsoft Windows, Nintendo Switch, Google Stadia.",
+        "release_date": "September 14, 2023",
+        "genre": "Fighting",
+        "publisher": "Warner Bros. Interactive Entertainment"
+      },
+      {
+        "id": 4,
+        "title": "Final Fantasy VII: Ever Crisis",
+        "description": " is a role-playing video game developed by Applibot and Square Enix, who also publishes it for Android and iOS. It forms part of the Compilation of Final Fantasy VII, a series of media spin-offs from the 1997 video game Final Fantasy VII.",
+        "developer": "Square Enix",
+        "rating": "4.4/5",
+        "image": "images/FFEC.jpeg",
+        "premise": "Final Fantasy VII: Ever Crisis features an epic story set in the iconic world of Final Fantasy VII. Players will embark on an unforgettable journey, meeting beloved characters and experiencing the classic story with modern enhancements. The game offers turn-based combat, character customization, and beautifully reimagined visuals, providing a fresh experience for both long-time fans and newcomers.",
+        "platforms": "PC, Android, iOS",
+        "release_date": "September 7, 2023",
+        "genre": "RPG",
+        "publisher": "Square Enix"
+      },
+      {
+        "id": 5,
+        "title": "Lies of P",
+        "description": "Lies of P is a thrilling soulslike game that takes the story of Pinocchio, turns it on its head, and sets it against the darkly elegant backdrop of the Belle Epoque era. It is developed by Neowiz Games and Round8 Studio and published by Neowiz Games.",
+        "developer": "Neowiz Games",
+        "rating": "9/10",
+        "image": "images/liesofP.jpg",
+        "premise": "Inspired by the familiar story of Pinocchio, Lies of P is an action souls-like game set in a cruel, dark Belle Époque world. All of humanity is lost in a once beautiful city that has now become a living hell filled with unspeakable horrors. Lies of P offers an elegant world filled with tension, a deep combat system and a gripping story. Guide Pinocchio and experience his unrelenting journey to become human. Play as Pinocchio, a puppet mechanoid, and fight through everything in your path to find this mystery person. But don't expect any help along the way and don't make the mistake of trusting anyone. You must always lie to others if you hope to become human.",
+        "platforms": "PlayStation, Xbox, PC",
+        "release_date": "September 19, 2023",
+        "genre": "Soulslike, Action, Adventure",
+        "publisher": "Neowiz Games"
+      },
+      {
+        "id": 6,
+        "title": "Payday 3",
+        "description": "Payday 3 is a first-person shooter game developed by Starbreeze Studios and published by Deep Silver. It is a sequel to Payday 2 and is the third installment in the Payday series of video games. The game was released on September 21, 2023, for PlayStation 5, Xbox Series X/S, and Microsoft Windows.",
+        "developer": "Starbreeze Studios",
+        "rating": "6/10",
+        "image": "images/payday3.jpeg",
+        "premise": "In Payday 3, players will once again step into the shoes of skilled criminals as they plan and execute elaborate heists and criminal activities. The game combines intense first-person shooter action with strategic gameplay elements, where teamwork and coordination are essential for success. The criminal world is your oyster, and it's up to you and your crew to pull off the ultimate heists and get away with the loot.",
+        "platforms": "PlayStation 5, Xbox Series X/S, PC",
+        "release_date": "September 21, 2023",
+        "genre": "First-Person Shooter, Action, Co-op",
+        "publisher": "Deep Silver"
+      },
+      {
+        "id": 7,
+        "title": "EA Sports FC 24",
+        "description": "EA Sports FC 24 is an upcoming football video game, developed by EA Vancouver and EA Romania, and published by EA Sports. It serves as the inaugural installment in the EA Sports FC series following the conclusion of EA's partnership with FIFA and is the 31st overall installment. The game is set to launch worldwide on 29 September 2023.",
+        "developer": "EA Vancouver, EA Romania",
+        "rating": "6/10",
+        "image": "images/FC24.jpeg",
+        "premise": "In EA Sports FC 24, players will experience the thrill of football like never before. With realistic gameplay, stunning graphics, and immersive modes, this game is designed to be a celebration of the world's most popular sport. Compete in various leagues, create your dream team, and challenge your friends in exciting multiplayer matches. Get ready to score the winning goal and lead your team to victory in this latest football extravaganza.",
+        "platforms": "PlayStation 5, Xbox Series X/S, PC",
+        "release_date": "September 29, 2023",
+        "genre": "Sports, Football",
+        "publisher": "EA Sports"
+      },
+      {
+        "id": 8,
+        "title": "The Crew Motorfest",
+        "description": "The Crew Motorfest is a 2023 racing video game developed by Ubisoft Ivory Tower and published by Ubisoft. It's available for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S. This game serves as the sequel to 2018's The Crew 2 and is the third installment in The Crew series. The game was released on September 14, 2023.",
+        "developer": "Ubisoft Ivory Tower",
+        "rating": "7.8/10",
+        "image": "images/TCMF.jpeg",
+        "premise": "The Crew Motorfest takes players on an adrenaline-fueled journey through a massive open-world racing environment. Experience a vast and detailed recreation of the United States, from city streets to rural highways. Compete in a variety of races, events, and challenges with friends and players from around the world. Customize and upgrade your vehicles, build your own crew, and strive to become the ultimate motorsport champion. Get ready to rev your engines and embark on an epic racing adventure like never before.",
+        "platforms": "PlayStation 4, PlayStation 5, PC, Xbox One, Xbox Series X/S",
+        "release_date": "September 14, 2023",
+        "genre": "Racing",
+        "publisher": "Ubisoft"
+      },
+      {
+        "id": 9,
+        "title": "NBA 2K24",
+        "description": "NBA 2K24 is a 2023 basketball video game developed by Visual Concepts and published by 2K. It's based on the National Basketball Association (NBA) and is the 25th installment in the NBA 2K franchise, succeeding NBA 2K23.",
+        "developer": "Visual Concepts",
+        "rating": "8.5/10",
+        "image": "images/NBA24.jpg",
+        "premise": "In NBA 2K24, step onto the virtual court and experience the most authentic and immersive basketball gameplay yet. Take control of your favorite NBA stars, create your own player, or build an entire team from scratch. With improved graphics, realistic player movements, and an expanded range of game modes, NBA 2K24 delivers an unparalleled basketball gaming experience. Whether you're an aspiring NBA superstar or a seasoned veteran, this game offers hours of thrilling basketball action and competition.",
+        "platforms": "PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S, PC, Nintendo Switch",
+        "release_date": "September 19, 2023",
+        "genre": "Sports, Basketball",
+        "publisher": "2K"
+      }
+      
+    ]
+  }
