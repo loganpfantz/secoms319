@@ -960,7 +960,146 @@ const GameSpace = () => {
 
   /* INDEX VIEW */
 
-  const indexView = <div></div>;
+  const indexView = <div>
+  <div className="header">
+    <div className="collapse text-bg-dark" id="navbarHeader">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-8 col-md-7 py-4">
+            <h4>About</h4>
+            <p className="text-gray">
+              This is a project created by Logan Pfantz and Jesus Soto for
+              Iowa State University className COMS 319 Fall 2023.
+            </p>
+          </div>
+          <div className="col-sm-4 offset-md-1 py-4">
+            <h4>Contact</h4>
+            <ul className="list-unstyled">
+              <li>
+                <a href="#" className="text-white">
+                  lwpfantz@iastate.edu
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-white">
+                  jhsoto@iastate.edu
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="navbar navbar-dark bg-dark shadow-sm">
+      <div className="container">
+        <a href="#" className="navbar-brand d-flex align-items-center">
+          <img src={controllerIcon} alt="Controller Icon" width="40px" />
+          <div className="header-style">
+            <strong>
+              <span style={{ color: "yellow" }}>Game</span>
+              <span style={{ color: "red" }}>Space</span>
+            </strong>
+          </div>
+        </a>
+
+        <button
+          type="button"
+          className="btn btn-lg btn-white-text"
+          onClick={() => handleViewChange("homeView")}
+        >
+          Home
+        </button>
+        <button
+          type="button"
+          className="btn btn-lg btn-white-text"
+          onClick={() => handleViewChange("gamingLibrary")}
+        >
+          Gaming Library
+        </button>
+        <button
+          type="button"
+          className="btn btn-lg btn-white-text2"
+          onClick={() => handleViewChange("consolesCatalogue")}
+        >
+          Consoles Catalogue
+        </button>
+        <button
+          type="button"
+          className="btn btn-lg btn-white-text2"
+          onClick={() => handleViewChange("indexView")}
+        >
+          About Us
+        </button>
+        <button
+              type="button"
+              className="btn btn-lg btn-white-text2"
+              onClick={() => handleViewChange("userView")}
+            >
+              Account
+            </button>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div className="subHeader">
+    <div className="welcome-banner">
+      <div className="row py-lg-5">
+        <div className="col-lg-6 col-md-8 mx-auto">
+          <h1 id="title">
+            <strong>
+              <span style={{ color: "yellow" }}>Game</span>
+              <span style={{ color: "red" }}>Space</span>
+            </strong>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div className="main-data">
+    <h1 id="indexText">About Us:</h1>
+        <h2 id="indexText">Class:</h2>
+        <p id="indexText" class="lead">SE/ComS 319 Construction of User Interfaces</p>
+        <p id="indexText" class="lead">Fall 2023</p>
+        <h2 id="indexText">Developers:</h2>
+        <p id="indexText" class="lead">Logan Pfantz, Jesus Soto</p>
+        <h2 id="indexText">Email:</h2>
+        <p id="indexText" class="lead">lwpfantz@iastate.edu, jhsoto@iastate.edu</p>
+        <h2 id="indexText">Instructor:</h2>
+        <p id="indexText" class="lead">Abraham Aldaco, Ph.D.</p>
+        <h2 id="indexText">Date:</h2>
+        <p id="indexText" class="lead">September 22nd 2023</p>
+  </div>
+
+  <div className="footer">
+    <div className="container">
+      <p className="float-end mb-1">
+        <a href="#">Back to top</a>
+      </p>
+      <p className="mb-1">
+        This website was designed by Logan Pfantz and Jesus Soto
+      </p>
+      <p className="mb-0">
+        About us: We are current students of Iowa State University enrolled
+        in the Software Engineering major.
+        <a href="https://www.engineering.iastate.edu/undergraduate-majors-and-minors/software/?utm_medium=ppc&utm_source=google&utm_campaign=FY24%20Recruitment%20-%20Engineering&utm_content=Software%20Engineering&gclid=Cj0KCQjw9rSoBhCiARIsAFOipll2bDiP-kEB61yO7ZQLNaxUyH2mzYo5DscEHKU5Z_-J4zvMJIKZRJkaAsXGEALw_wcB">
+          Join us at Iowa State!
+        </a>
+      </p>
+    </div>
+  </div>
+</div>;
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
